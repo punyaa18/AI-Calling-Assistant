@@ -1,11 +1,12 @@
 # AI Call Assistant
 
-A simple web application that collects user information (name, email, and phone number) to initiate AI-powered calls via VAPI.
+A simple Node.js web application that collects user information (name, email, and phone number) to initiate AI-powered calls via VAPI.
 
 ## Features
 
 - Clean, responsive contact form
-- Collects name, email, and phone number
+- Vanilla HTML/CSS/JavaScript (no frameworks)
+- Node.js + Express backend
 - Ready to integrate with VAPI API
 - Modern gradient UI design
 
@@ -16,36 +17,33 @@ A simple web application that collects user information (name, email, and phone 
 npm install
 ```
 
-2. Start the development server:
+2. Start the server:
 ```bash
-npm run dev
+npm start
 ```
 
-3. Build for production:
-```bash
-npm run build
-```
+3. Open your browser and go to: `http://localhost:3000`
 
 ## Integration
 
 To integrate with VAPI:
 
 1. Get your VAPI API key from [vapi.ai](https://vapi.ai)
-2. In `src/App.jsx`, replace the TODO comment in the `handleSubmit` function with your VAPI API call:
+2. In `server.js`, replace the TODO comment with your VAPI API call:
 
 ```javascript
-const response = await fetch('YOUR_VAPI_ENDPOINT', {
-  method: 'POST',
-  headers: { 
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer YOUR_API_KEY'
-  },
-  body: JSON.stringify(formData)
-})
+const vapiResponse = await fetch('YOUR_VAPI_ENDPOINT', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer YOUR_API_KEY'
+    },
+    body: JSON.stringify({ name, email, phone })
+});
 ```
 
 ## Technologies
 
-- React 19
-- Vite
-- Tailwind CSS
+- Node.js
+- Express.js
+- Vanilla JavaScript
