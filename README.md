@@ -1,52 +1,92 @@
 # AI Call Assistant
-buy a number from your twilio console , can buy one number on an trial account!
-https://console.twilio.com/
-<img width="1350" height="647" alt="image" src="https://github.com/user-attachments/assets/bdad0e58-4bff-4536-97a1-d7345f32a201" />
 
-A simple Node.js web application that collects user information (name, email, and phone number) to initiate AI-powered calls via VAPI.
+An intelligent outbound calling system powered by **VAPI AI**, **Make.com** workflows, and **Twilio** infrastructure. This project demonstrates a complete end-to-end automation solution for AI-powered phone calls.
 
-## Features
+## Core Architecture
 
-- Clean, responsive contact form
-- Vanilla HTML/CSS/JavaScript (no frameworks)
-- Node.js + Express backend
-- Ready to integrate with VAPI API
-- Modern gradient UI design
+### 🤖 VAPI AI
+The conversational AI engine that powers outbound calls. Handles natural language understanding, multi-language support (English & Hindi), and intelligent call handling.
 
-## Setup
+### 🔗 Make.com Workflows
+Orchestrates the entire call pipeline:
+- **Webhook Trigger**: Receives user data from the contact form
+- **Supabase Integration**: Stores and retrieves contact information
+- **Data Processing**: Normalizes phone numbers and user data
+- **Array Aggregator**: Iterates through contacts for batch calling
+- **HTTP Module**: Triggers VAPI calls with proper authentication and payload
 
-1. Install dependencies:
-```bash
-npm install
+### 📞 Twilio Integration
+Provides the underlying telecommunications infrastructure:
+- Phone number provisioning
+- Call routing and management
+- Inbound/outbound call handling
+- IVR capabilities
+
+[Get a Twilio number (available on trial accounts)](https://console.twilio.com/)
+
+## System Flow
+
+```
+Contact Form → Node.js API → Make.com Webhook 
+→ Supabase (Data Storage) → Data Processing 
+→ VAPI AI Assistant → Twilio (Phone Calls)
 ```
 
-2. Start the server:
+## Setup & Configuration
+
+### Prerequisites
+- Node.js & npm
+- VAPI AI account and API key
+- Make.com account and workflow
+- Twilio account with phone number
+- Supabase project (for data storage)
+
+### Installation
+
 ```bash
+npm install
 npm start
 ```
 
-3. Open your browser and go to: `http://localhost:3000`
+Server runs on: `http://localhost:3000`
 
-## Integration
+## Configuration Guide
 
-To integrate with VAPI:
+### 1. **Twilio Setup**
+- Buy a phone number from [Twilio Console](https://console.twilio.com/)
+- Note your phone number ID (used in Make.com workflow)
 
-1. Get your VAPI API key from [vapi.ai](https://vapi.ai)
-2. In `server.js`, replace the TODO comment with your VAPI API call:
+### 2. **VAPI Configuration**
+- Create an AI assistant in [VAPI](https://vapi.ai)
+- Configure assistant behavior and language settings
+- Get your assistant ID and API key
+- Set authentication headers in Make.com HTTP module
 
-```javascript
-const vapiResponse = await fetch('YOUR_VAPI_ENDPOINT', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer YOUR_API_KEY'
+### 3. **Make.com Workflow**
+- Webhook receives contact data
+- Supabase module stores/retrieves phone numbers
+- Array Aggregator processes batch calls
+- HTTP module calls VAPI with payload:
+  ```json
+  {
+    "customer": {
+      "number": "{{phone_number}}",
+      "name": "{{user_name}}",
+      "extension": ""
     },
-    body: JSON.stringify({ name, email, phone })
-});
-```
+    "phoneNumberId": "<your_twilio_id>",
+    "assistant": {{assistant_config}}
+  }
+  ```
+
+### 4. **Server Integration**
+Update `/api/call` endpoint in `server.js` to connect with your Make.com webhook
 
 ## Technologies
 
-- Node.js
-- Express.js
-- Vanilla JavaScript
+- **Backend**: Node.js, Express.js
+- **AI**: VAPI AI
+- **Workflow Automation**: Make.com
+- **Telecommunications**: Twilio
+- **Database**: Supabase
+- **Frontend**: Vanilla HTML/CSS/JavaScript

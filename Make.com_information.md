@@ -1,15 +1,18 @@
 <img width="1363" height="647" alt="Make com screenshot" src="https://github.com/user-attachments/assets/fbab723d-044c-44c5-a275-ee75a6a4d8b7" />
 
- ## Workflow Explanation
+ ## Workflow Steps
 
 This workflow powers an AI calling assistant end-to-end.
 
-**The webhook** acts as the trigger.
-When a user submits their phone number (for example, from a website or form), the webhook is triggered.
+### Step 1: Webhook Trigger
+**The webhook** acts as the entry point.
+When a user submits their phone number from the web form, the webhook is triggered.
 
-Once triggered, the phone number and user data are stored in Supabase, which acts as the database.
+### Step 2: Contact Storage  
+The phone number and user data are stored in **Supabase**, which acts as the database.
 
-From **Supabase**, we fetch the phone numbers, clean and normalize the data, and then iterate through it, so no matter how many numbers are present, each person can be called individually.
+### Step 3: Data Processing
+From **Supabase**, we fetch and normalize phone numbers. The **Array Aggregator** processes contacts individually.
 Make sure your Supabase has the limits as you require. In our case, we used these <img width="843" height="632" alt="image" src="https://github.com/user-attachments/assets/d5ae8a8c-be61-413d-8f7b-eaf9b843fda6" />
 
 **This is for the array aggregator**  

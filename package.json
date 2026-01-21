@@ -1,7 +1,7 @@
 {
   "name": "ai-call-assistant",
   "version": "1.0.0",
-  "description": "AI Call Assistant - Simple contact form to initiate VAPI calls",
+  "description": "AI Call Assistant - VAPI AI + Make.com + Twilio integration for intelligent outbound calling automation",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
