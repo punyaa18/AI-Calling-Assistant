@@ -1,0 +1,25 @@
+# GitHub Pages Jekyll Configuration
+title: AI Call Assistant
+description: Intelligent voice-based calling assistant powered by Vapi AI, Make.com, and Twilio
+url: https://yourusername.github.io/AI-Call-Assistant
+baseurl: /AI-Call-Assistant
+repository: yourusername/AI-Call-Assistant
+
+# Theme
+theme: jekyll-theme-minimal
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude files
+exclude:
+  - node_modules
+  - Final_year_Project/node_modules
+  - package.json
+  - package-lock.json
+  - .env
+  - .git
