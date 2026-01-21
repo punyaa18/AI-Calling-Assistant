@@ -1,13 +1,13 @@
 # AI Call Assistant
 
-An intelligent outbound calling system powered by **VAPI AI**, **Make.com** workflows, and **Twilio** infrastructure. This project demonstrates a complete end-to-end automation solution for AI-powered phone calls.
+An intelligent outbound calling system powered by **VAPI AI**, **Make.com** workflows, and **Twilio** infrastructure. The assistant speaks fluent English and Hindi, switching naturally mid-conversation to match the caller.
 
 ## Core Architecture
 
-### 🤖 VAPI AI
-The conversational AI engine that powers outbound calls. Handles natural language understanding, multi-language support (English & Hindi), and intelligent call handling.
+### VAPI AI
+The conversational AI engine for outbound calls. Delivers natural language understanding, bilingual (English/Hindi) fluency, and adaptive call handling.
 
-### 🔗 Make.com Workflows
+### Make.com Workflows
 Orchestrates the entire call pipeline:
 - **Webhook Trigger**: Receives user data from the contact form
 - **Supabase Integration**: Stores and retrieves contact information
@@ -15,7 +15,7 @@ Orchestrates the entire call pipeline:
 - **Array Aggregator**: Iterates through contacts for batch calling
 - **HTTP Module**: Triggers VAPI calls with proper authentication and payload
 
-### 📞 Twilio Integration
+### Twilio Integration
 Provides the underlying telecommunications infrastructure:
 - Phone number provisioning
 - Call routing and management
@@ -31,6 +31,14 @@ Contact Form → Node.js API → Make.com Webhook
 → Supabase (Data Storage) → Data Processing 
 → VAPI AI Assistant → Twilio (Phone Calls)
 ```
+
+## Key Capabilities
+
+- Bilingual voice experiences in English and Hindi, including smooth code-switching
+- Automated outbound campaigns with batch processing and contact enrichment
+- Real-time orchestration via Make.com with Supabase-backed data
+- Carrier-grade delivery and IVR options through Twilio
+- Secure credential handling with API-keyed requests to VAPI and Twilio
 
 ## Setup & Configuration
 
@@ -90,3 +98,8 @@ Update `/api/call` endpoint in `server.js` to connect with your Make.com webhook
 - **Telecommunications**: Twilio
 - **Database**: Supabase
 - **Frontend**: Vanilla HTML/CSS/JavaScript
+
+## Screenshots
+
+- Call outcome preview: ![AI Call Proof](Screenshots/AIcallProof.jpeg)
+- Make.com workflow orchestration: ![Make.com Workflow](Screenshots/Make.com%20screenshot%20.png)
