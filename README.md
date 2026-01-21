@@ -1,4 +1,7 @@
 # AI Call Assistant
+buy a number from your twilio console , can buy one number on an trial account!
+https://console.twilio.com/
+<img width="1350" height="647" alt="image" src="https://github.com/user-attachments/assets/bdad0e58-4bff-4536-97a1-d7345f32a201" />
 
 A simple Node.js web application that collects user information (name, email, and phone number) to initiate AI-powered calls via VAPI.
 
