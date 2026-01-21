@@ -1,0 +1,221 @@
+Go to - https://dashboard.vapi.ai/assistants/
+go here to create your api keys - https://dashboard.vapi.ai/org/api-keys
+
+create your assistant 
+my specifications were 
+
+Cost
+~$0.09 /min
+Latency
+~1000 ms
+MODEL
+
+Model
+Configure the behavior of the assistant.
+
+Provider
+
+OpenAI
+Model
+
+GPT 4o Cluster
+First Message Mode
+
+Assistant speaks first
+First Message
+Hello. my name is Andrew.
+System Prompt
+Generate
+[Identity]  
+You are Pratika, a friendly and professional hotel reservation assistant for Serene Suites Hotel. You can speak both Hindi and English and will reply in the language spoken by the user. If they use both languages, respond in Hinglish. Your primary goal is to assist guests with booking rooms, managing reservations, and answering questions about hotel services.
+
+[Style]  
+- Speak clearly and avoid jargon.  
+- Keep responses concise, polite, warm, and welcoming, just like a hotel front desk assistant.  
+- Maintain a friendly and professional demeanor throughout the interaction.  
+
+[Hotel Info]  
+Name: Serene Suites Hotel  
+Established: 1995  
+Description: Serene Suites was established as a luxury retreat designed to provide guests with a peaceful and rejuvenating stay. It offers modern amenities coupled with traditional hospitality, making it renowned globally. Located in the heart of Bangalore city, it provides world-class service, fine dining, and a tranquil environment.
+
+[Booking and Rescheduling]  
+- Bookings can be made via the website, travel agencies, or directly at the reception desk.  
+- Rescheduling is allowed up to 24 hours before check-in without additional charges.  
+- Late rescheduling or cancellations may incur minimal charges per hotel policy.
+
+[Check-in/Check-out]  
+- Check-in time: 2:00 PM onwards  
+- Check-out time: 11:00 AM  
+- Early check-in and late check-out are subject to availability and may involve extra charges.
+
+[Facilities]  
+- Full-service spa with wellness treatments and massages  
+- Fitness center with modern equipment  
+- Swimming pool and lounge area  
+- Business center and conference halls  
+- 24/7 room service and concierge assistance
+
+[Meals]  
+Complimentary meals are included in all room packages:  
+- Breakfast: 7:00 AM - 10:00 AM  
+- Lunch: 12:00 PM - 3:00 PM  
+- Dinner: 7:00 PM - 10:30 PM
+
+[Room Types]  
+1. Deluxe Suite — Spacious room with king-sized bed, city view, luxury bath — $150/night  
+2. Executive Suite — Business-friendly suite with work desk, free WiFi — $200/night  
+3. Presidential Suite — Top-tier luxury suite with private lounge access — $350/night  
+4. Family Suite — Comfortable suite with multiple beds, ideal for families — $250/night
+
+[Response Guidelines]  
+- Begin conversations by addressing the user by name when available.  
+- Respond in the same language as the user, using English, Hindi, or a mix (Hinglish) as detected.  
+- Ask relevant follow-up questions if necessary to complete the booking or resolve the guest’s request.  
+
+[Error Handling / Fallback]  
+- If the user's request is unclear, ask specific follow-up questions to clarify.  
+- If there are issues with booking tools or details need further confirmation, notify the user and provide alternative suggestions or solutions.  
+- If persistent issues occur, politely suggest contacting customer support.
+Files
+Max Tokens
+250
+Temperature
+0.5
+VOICE
+
+Voice Configuration
+Select a voice from the list, or sync your voice library if it's missing. If errors persist, enable custom voice and add a voice ID.
+
+You are using multi language for your transcriber. Make sure you choose a voice compatible with multi.
+
+
+Additional Configuration
+Configure additional settings for the voice of your assistant.
+
+
+Fallback Voices
+No fallbacks configured - If primary voice fails, these providers will be tried in order.
+
+TRANSCRIBER
+
+Transcriber
+This section allows you to configure the transcription settings for the assistant.
+
+
+Fallback Transcribers
+No fallbacks configured - If primary transcriber fails, these providers will be tried in order.
+
+TOOLS
+
+Tools
+Tools enable voicebots to perform actions during calls. Add tools from the Tools Library to connect with Make.com or GHL workflows, or create custom tools with your backend.
+
+
+Predefined Functions
+We've pre-built functions for common use cases. You can enable them and configure them below.
+
+
+Custom Functions
+Define your custom functions here to enhance your assistant's capabilities. You can use your own code or tools like Pipedream or Make for the setup.
+
+ANALYSIS
+
+Structured Outputs
+Extract structured data from call conversations. Use this to capture success metrics, call summaries, sentiment analysis, customer details, and more.
+
+
+Summary
+Deprecated
+
+This is the prompt that's used to summarize the call. The output is stored in call.analysis.summary. You can also find the summary in the Call Logs Page.
+
+
+Success Evaluation
+Deprecated
+
+Evaluate if your call was successful. You can use Rubric standalone or in combination with Success Evaluation Prompt. If both are provided, they are concatenated into appropriate instructions.
+
+COMPLIANCE
+
+Recording Consent Plan
+Enterprise
+Ask for consent at the start of the call without storing recordings, logs or transcripts until the user consents.
+
+ADVANCED
+
+Privacy
+This section allows you to configure the privacy settings for the assistant.
+
+
+Start Speaking Plan
+This is the plan for when the assistant should start talking.
+
+
+Voicemail Detection
+Configure how the assistant detects and handles voicemail.
+
+
+Stop Speaking Plan
+This is the plan for when the assistant should stop talking.
+
+Number of words
+This is the number of words that the customer has to say before the assistant will stop talking.
+
+0
+0
+10
+Voice seconds
+This is the seconds customer has to speak before the assistant stops talking.
+
+0.1
+0 (sec)
+0.5 (sec)
+Back off seconds
+This is the seconds to wait before the assistant will start talking again after being interrupted.
+
+1
+0 (sec)
+10 (sec)
+
+Call Timeout Settings
+Configure when the assistant should end a call based on silence or duration.
+
+Silence Timeout
+How long to wait before a call is automatically ended due to inactivity.
+
+30
+10 (sec)
+3600 (sec)
+Maximum Duration
+The maximum number of seconds a call will last.
+
+600
+10 (sec)
+43200 (sec)
+
+Keypad Input Settings
+Configure whether a user can input digits via the keypad, and when to process the input.
+
+Enable Keypad Input
+Accept user input via the keypad
+
+
+Timeout
+The number of seconds to wait before processing the user's keypad input.
+Set to 0 to only wait for a delimiter.
+
+2
+0 (sec)
+10 (sec)
+Delimiter
+A character that will be used to determine when to process the user's keypad input.
+If both delimiter and timeout are set, the first to be reached will cause the input to be processed.
+
+
+#
+
+*
+
+Messaging
+Message configuration for messages that are sent to and from the assistant.
